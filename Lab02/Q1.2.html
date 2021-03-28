@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab02</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    /*Pass a callback (function) to the function created in the previous step and execute that
+    function inside the timeout by passing the value.*/
+
+    let  getValue = function(){
+        let value = 0;
+        setTimeout(function (){
+            value = 10;
+            console.log(value);
+        },2000);
+
+        console.log(value);
+    };
+
+    getValue();
+
+    //out put , first get 0 after 2s then give 10
+
+</script>
+</body>
+</html>

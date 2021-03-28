@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    //(4) Try exercise 1 with async/await.
+
+
+    function   getValue() {
+        let value = 0;
+        return new Promise(function (reslove, reject) {
+            value = 10;
+            setTimeout(function () {
+                reslove(value);
+            }, 2000);
+
+        });
+    }
+
+    function getNewValue(value){
+        return new Promise(function (resolve,reject){
+            value = value +100;
+            resolve(value);
+
+        });
+    }
+
+    async function print() {
+        let  v = await getValue();
+        let  v2 = await getNewValue(v);
+        console.log(v);
+        console.log(v2);
+        console.log("This is asynchronous");
+
+    }
+
+    print();
+
+    console.log("it skiped");
+
+
+
+</script>
+</body>
+</html>

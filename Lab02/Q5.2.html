@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    //(5) Try exercise 2 class, extends, get, set, and super keywords.
+    //geters and setters
+
+    class Square{
+        constructor(length){
+            this.height = length;
+            this.width = length;
+        }
+
+        get getArea(){
+            return this.width * this.height;
+        };
+
+        set getArea(value){
+            this.height  = Math.sqrt(value);
+            this.width  = Math.sqrt(value);
+
+        }
+
+        area(){
+            return this.width * this.height;
+        }
+    }
+
+    let sqare1 = new Square(5);
+
+
+    sqare1.getArea = 64;
+
+    console.log("Area" + sqare1.area());
+    console.log(sqare1);
+
+</script>
+</body>
+</html>

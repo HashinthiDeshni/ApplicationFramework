@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lab02</title>
+</head>
+<body>
+<script type="text/javascript">
+    //(2-use callback function)
+    /*Pass a callback (function) to the function created in the previous step and execute that
+    function inside the timeout by passing the value.*/
+
+    let printMe = function (value){
+        console.log(value);
+    };
+
+    let  getValue = function(callback){
+        let value = 0;
+        setTimeout(function (){
+            value = 10;
+            callback(value);
+
+        },2000);
+        return value;
+    };
+
+    console.log(getValue(printMe));
+
+    /*output 0,10 .., callback eken nawatha call karanawa value ekata*/
+</script>
+</body>
+</html>

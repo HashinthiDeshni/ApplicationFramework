@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    //(2-Promise function)
+    //Now return a promise instead of accepting the callback.
+
+
+    let  getValue = function() {
+        let value = 0;
+        return new Promise(function (resolve) {
+            setTimeout(function () {
+                value = 10;
+                resolve(value);
+            }, 2000);
+        });
+    };
+
+    getValue().then(function (value){
+        console.log(value);
+    });
+
+
+    console.log("I trusted you!");
+
+
+</script>
+</body>
+</html>

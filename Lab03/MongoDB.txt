@@ -1,0 +1,59 @@
+
+//this is queries of lab 03
+
+
+//inserting the document to the sliit collection
+db.sliit.insert({
+name: "John",
+dateOfBirth: "1990-01-01T00:00:00Z",
+subjects: ["Application frameworks", "Computerarchitecture"]
+})
+
+
+//can use the new Date() method to insert the current date and time to MongoDB
+db.sliit.insert({
+name: "John",
+dateOfBirth: new Date(),
+subjects: ["Application frameworks", "Computerarchitecture"]
+})
+
+
+db.sliit.find()
+
+//find by name
+db.sliit.find({name :'John'})
+
+
+//find by _id
+db.sliit.find({_id :'605a22e1421c6ccb2d752531'})
+
+
+//Add ‘Distributed Computing’ to the subjects list.
+db.sliit.updateOne({ name: 'John'},{ $push: {subjects : 'Distributed Computing'}})
+
+
+
+db.sliit.insert({
+name: "Smith",
+dateOfBirth: "1990-01-15T00:00:00Z",
+subjects: ["Application frameworks", "Computerarchitecture"],
+isActive : true
+})
+
+db.sliit.insert({
+name: "Jane",
+dateOfBirth: "s1990-02-15T00:00:00Z",
+subjects: ["Application frameworks", "Computerarchitecture"],
+isActive : false
+})
+
+db.sliit.deleteOne({name : 'Jane'})
+
+//Find the document with the name ‘Smith’ and isActive flag is true and add Distributed computing to subjects.
+db.sliit.updateOne({ name: 'Smith', isActive:true},{ $push : {subjects : 'Distributed computing'}})
+
+//Update the first document ‘isActive’ to false.
+db.sliit.updateOne({ name: 'John'},{ $set : {isActive : false}})
+
+//Remove the first document created.
+db.sliit.deleteOne({name : 'John'})
